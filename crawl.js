@@ -36,10 +36,13 @@ async function crawlPage(baseURL, currentURL, pages) {
         for (const nextURL of nextURLs) {
             pages = await crawlPage(baseURL, nextURL, pages)
         }
-        return pages
+        // return pages
 
     } catch (err) {
         console.log(`error in fech: ${err.message}, on page: ${currentURL}`)
+        // return pages
+    } finally {
+        return pages
     }
 }
 
